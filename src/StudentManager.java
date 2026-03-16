@@ -6,7 +6,7 @@ public class StudentManager {
     private final List<Student> students = new ArrayList<>();
     private final String fileName = "src/students.txt";
 
-    // 1️⃣ Load from file
+
     public void loadStudents() {
         File file = new File(fileName);
 
@@ -48,7 +48,7 @@ public class StudentManager {
         }
     }
 
-    // 2️⃣ Display
+
     public void displayAll() {
         System.out.println("\n--- Student List ---");
         for (Student s : students) {
@@ -56,17 +56,17 @@ public class StudentManager {
         }
     }
 
-    // 3️⃣ Highest Score
+
     public Student getTopStudent() {
         return Collections.max(students, Comparator.comparingDouble(Student::getScore));
     }
 
-    // 4️⃣ Lowest Score
+
     public Student getLowestStudent() {
         return Collections.min(students, Comparator.comparingDouble(Student::getScore));
     }
 
-    // 5️⃣ Average
+
     public double getAverageScore() {
         double total = 0;
         for (Student s : students) {
@@ -75,7 +75,7 @@ public class StudentManager {
         return students.isEmpty() ? 0 : total / students.size();
     }
 
-    // 6️⃣ Passed Students
+
     public void displayPassed() {
         System.out.println("\nStudents who passed:");
         boolean found = false;
@@ -88,7 +88,7 @@ public class StudentManager {
         if (!found) System.out.println("None");
     }
 
-    // 7️⃣ Failed Students
+
     public void displayFailed() {
         System.out.println("\nStudents who failed:");
         boolean found = false;
@@ -101,12 +101,12 @@ public class StudentManager {
         if (!found) System.out.println("None");
     }
 
-    // 8️⃣ Add Student
+
     public void addStudent(Student student) {
         students.add(student);
     }
 
-    // 9️⃣ Update Score
+
     public void updateStudentScore(int id, double newScore) {
         for (Student s : students) {
             if (s.getStudentId() == id) {
@@ -118,7 +118,7 @@ public class StudentManager {
         System.out.println("Student not found.");
     }
 
-    // 🔟 Save to File
+
     public void saveStudents() {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
             for (Student s : students) {

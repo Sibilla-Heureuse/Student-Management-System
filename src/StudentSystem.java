@@ -25,7 +25,7 @@ public class StudentSystem {
         manager.displayPassed();
         manager.displayFailed();
 
-        // Simple Menu
+
         while (true) {
             System.out.println("\n1. Add Student");
             System.out.println("2. Update Score");
